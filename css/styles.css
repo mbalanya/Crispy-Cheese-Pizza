@@ -84,5 +84,16 @@ nav {
     opacity: 1;
   }
 
+}
 
+.tagline{
+  font-size: 40px;
+  padding: 150px;
+  background: #1d2939;
+  color: #dadfe6;
+  display: block;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
 }
