@@ -8,20 +8,12 @@ hamburger.addEventListener("click", () => {
     link.classList.toggle("fade");
   });
 });
-/*
-$(document).ready(function() {
-  $('option #pizzaSmall').click(function() {
-    alert('you');
-  //  $('form a').prop('href', '#toppingsMedium')
-  });
-});*/
 
 
 //links pizza size to relevant toppings
 $(document).ready(function() {
   $('#selectSize').click(function(e) {
     var z = $('#selectSize option:selected').text();
-    //alert(z);
      if(z === 'Small (Ksh.500)'){
        $('form a').prop('href', '#toppingsSmall');
      }else if(z === 'Medium (Ksh.800)'){
@@ -37,7 +29,7 @@ $(document).ready(function() {
 });
 
 $('#selectDelivery').collapse({
-  show: false
+  toggle: false
 })
 
 
@@ -64,9 +56,7 @@ $(document).ready(function() {
       var cityInput = $('input#inputCity').val();
       var stateInput = $('input#inputState').val();
       var zipInput = $('input#inputZip').val();
-      //alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
       e.preventDefault();
-
 
       var firstCustomer = new TotalCost(numberOfPizzasInput, pizzaSizeInput, crustTypeInput);
 
@@ -116,16 +106,3 @@ $(document).ready(function() {
       firstCustomer.firstCustomerPrint();
   });
 });
-
-/*
-var selected = new Array();
-
-           //Reference the CheckBoxes and insert the checked CheckBox value in Array.
-           $("#selectToppings input[type=checkbox]:checked").each(function () {
-               selected.push(this.value);
-           });
-
-           //Display the selected CheckBox values.
-           if (selected.length > 0) {
-               alert("Selected values: " + selected.join(","));
-           };*/
