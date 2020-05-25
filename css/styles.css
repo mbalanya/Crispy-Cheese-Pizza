@@ -89,3 +89,13 @@ nav {
   }
 
 }
+
+.tagline {
+  padding: 100px;
+  color: #dadfe6;
+  background: rgba(29,41, 57, 0.7);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 15px;
+  text-align: center;
+}
