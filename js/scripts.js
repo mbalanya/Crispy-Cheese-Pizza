@@ -50,15 +50,29 @@ $(document).ready(function() {
       var numberOfPizzasInput = parseInt($('#selectPizzaNumbers option:selected').text());
       var pizzaSizeInput = $('#selectSize option:selected').text();
       var crustTypeInput = $('#selectCrustType option:selected').text();
+
     //  var numberOfToppingsInput =
-      alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
+      //alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
       e.preventDefault();
+
 
       var firstCustomer = new TotalCost(numberOfPizzasInput, pizzaSizeInput, crustTypeInput);
 
       TotalCost.prototype.firstCustomerPrint = function(){
-        alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + this.crustType + ' crust.');
-      }
+        alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + crustConvert(crustTypeInput) + ' crust.');
+      };
+
+      var crustConvert = function() {
+        if(crustTypeInput === 'crispy (Ksh.150)'){
+          return 150;
+        } else if(crustTypeInput === 'Gluten-free (Ksh.100)'){
+          return 100;
+        } else if(crustTypeInput === 'Stuffed (Ksh.130)'){
+          return 130;
+        } else {
+          alert('Re-select a valid crust type.');
+        };
+      };
 
       firstCustomer.firstCustomerPrint();
   });
