@@ -35,36 +35,35 @@ $(document).ready(function() {
   });
 });
 
-function TotalCost(numberOfPizzas, pizzaSize, crustType, numberOfToppings){
+function TotalCost(numberOfPizzas, pizzaSize, crustType){
   this.numberOfPizzas = numberOfPizzas;
   this.pizzaSize = pizzaSize;
   this.crustType = crustType;
-  this.numberOfToppings = numberOfToppings;
+  //this.numberOfToppings = numberOfToppings;
 };
 
-var firstCustomer = new TotalCost(2, 'small', 'crunchy', 2);
 
-TotalCost.prototype.firstCustomerPrint = function(){
-  //alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + this.crustType + ' crust and ' + this.numberOfToppings + ' toppings');
-}
 
-firstCustomer.firstCustomerPrint();
 
 $(document).ready(function() {
-  var w = $('form').submit(function(e) {
-            var numberOfPizzasInput = $('#selectPizzaNumbers option:selected').text();
-            var pizzaSizeInput = $('#selectSize option:selected').text();
-            var crustTypeInput = $('#selectCrustType option:selected').text();
-          //  var numberOfToppingsInput =
+  $('form').submit(function(e) {
+      var numberOfPizzasInput = parseInt($('#selectPizzaNumbers option:selected').text());
+      var pizzaSizeInput = $('#selectSize option:selected').text();
+      var crustTypeInput = $('#selectCrustType option:selected').text();
+    //  var numberOfToppingsInput =
+      alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
+      e.preventDefault();
 
-            e.preventDefault();
+      var firstCustomer = new TotalCost(numberOfPizzasInput, pizzaSizeInput, crustTypeInput);
 
+      TotalCost.prototype.firstCustomerPrint = function(){
+        alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + this.crustType + ' crust.');
+      }
 
+      firstCustomer.firstCustomerPrint();
   });
 });
 
-
-alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
 /*
 var selected = new Array();
 
