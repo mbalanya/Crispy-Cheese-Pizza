@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'poppinslight', sans-serif !important;
+  font-family: 'poppins', sans-serif !important;
   background-image: url('../img/pizza-background.jpg');
 }
 
@@ -92,6 +92,7 @@ nav {
 
 .tagline {
   padding: 100px;
+  padding-bottom: 250px;
   color: #dadfe6;
   background: rgba(29,41, 57, 0.7);
   -moz-border-radius: 2px;
