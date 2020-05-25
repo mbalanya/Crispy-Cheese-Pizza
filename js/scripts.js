@@ -36,19 +36,9 @@ $(document).ready(function() {
 });
 
 $('#selectDelivery').collapse({
-  toggle: false
+  show: false
 })
-/*
-$(document).ready(function() {
-  $('#contactUs form').submit(function() {
-    var nameInput = $('input#name').val();
-    var emailInput = $('input#email').val();
-    var mrssageInput = $('input#message').val();
-    alert('Thank you '+ nameInput + ', we have received your message!')
-  //  document.getElementById("#contactUs").reset();
-    event.preventDefault();
-  });
-}); */
+
 
 function TotalCost(numberOfPizzas, pizzaSize, crustType){
   this.numberOfPizzas = numberOfPizzas;
@@ -80,8 +70,7 @@ $(document).ready(function() {
       var firstCustomer = new TotalCost(numberOfPizzasInput, pizzaSizeInput, crustTypeInput);
 
       TotalCost.prototype.firstCustomerPrint = function(){
-
-        alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + pizzaConvert(pizzaSizeInput) + ', with a ' + crustConvert(crustTypeInput) + ' crust. The total cost is Ksh.' + pizzaCost);
+        alert('Hi' + fnameInput + '! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + pizzaSizeInput + ', with a ' + crustTypeInput + ' crust. Delivery cost is Ksh.' + deliver() + ' The total cost is Ksh.' + pizzaCost);
       };
 
       var crustConvert = function() {
@@ -107,8 +96,15 @@ $(document).ready(function() {
           alert('Re-select a valid pizza size.');
         }
       }
+      var deliver = function() {
+        if(fnameInput && lnameInput != ''){
+          return 200;
+        }else{
+          return 0;
+        }
+      };
 
-      var pizzaCost = numberOfPizzasInput * (pizzaConvert(pizzaSizeInput) + crustConvert(crustTypeInput));
+      var pizzaCost = deliver() + (numberOfPizzasInput * (pizzaConvert(pizzaSizeInput) + crustConvert(crustTypeInput)));
       firstCustomer.firstCustomerPrint();
   });
 });
