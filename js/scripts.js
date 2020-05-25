@@ -12,7 +12,7 @@ hamburger.addEventListener("click", () => {
 
 //links pizza size to relevant toppings
 $(document).ready(function() {
-  $('#selectSize').click(function(e) {
+  $('#selectSiz').click(function(e) {
     var z = $('#selectSize option:selected').text();
      if(z === 'Small (Ksh.500)'){
        $('form a').prop('href', '#toppingsSmall');
