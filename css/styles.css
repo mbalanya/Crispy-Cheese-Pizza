@@ -1,10 +1,14 @@
+@import url('animate.css');
+@import url('font-awesome.css');
+@import url('poppins.css');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  font-family: 'poppinslight', sans-serif !important;
   background-image: url('../img/pizza-background.jpg');
 }
 
@@ -84,16 +88,4 @@ nav {
     opacity: 1;
   }
 
-}
-
-.tagline{
-  font-size: 40px;
-  padding: 150px;
-  background: #1d2939;
-  color: #dadfe6;
-  display: block;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  text-align: center;
 }
