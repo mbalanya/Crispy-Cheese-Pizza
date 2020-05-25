@@ -38,6 +38,17 @@ $(document).ready(function() {
 $('#selectDelivery').collapse({
   toggle: false
 })
+/*
+$(document).ready(function() {
+  $('#contactUs form').submit(function() {
+    var nameInput = $('input#name').val();
+    var emailInput = $('input#email').val();
+    var mrssageInput = $('input#message').val();
+    alert('Thank you '+ nameInput + ', we have received your message!')
+  //  document.getElementById("#contactUs").reset();
+    event.preventDefault();
+  });
+}); */
 
 function TotalCost(numberOfPizzas, pizzaSize, crustType){
   this.numberOfPizzas = numberOfPizzas;
@@ -54,8 +65,14 @@ $(document).ready(function() {
       var numberOfPizzasInput = parseInt($('#selectPizzaNumbers option:selected').text());
       var pizzaSizeInput = $('#selectSize option:selected').text();
       var crustTypeInput = $('#selectCrustType option:selected').text();
-
     //  var numberOfToppingsInput =
+      var fnameInput = $('input#inputFname').val();
+      var lnameInput = $('input#inputLname').val();
+      var emailInput = $('input#inputEmail').val();
+      var addressInput = $('input#inputAddress').val();
+      var cityInput = $('input#inputCity').val();
+      var stateInput = $('input#inputState').val();
+      var zipInput = $('input#inputZip').val();
       //alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
       e.preventDefault();
 
