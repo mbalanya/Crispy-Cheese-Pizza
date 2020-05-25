@@ -35,6 +35,10 @@ $(document).ready(function() {
   });
 });
 
+$('#selectDelivery').collapse({
+  toggle: false
+})
+
 function TotalCost(numberOfPizzas, pizzaSize, crustType){
   this.numberOfPizzas = numberOfPizzas;
   this.pizzaSize = pizzaSize;
@@ -59,7 +63,8 @@ $(document).ready(function() {
       var firstCustomer = new TotalCost(numberOfPizzasInput, pizzaSizeInput, crustTypeInput);
 
       TotalCost.prototype.firstCustomerPrint = function(){
-        alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + crustConvert(crustTypeInput) + ' crust.');
+
+        alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + pizzaConvert(pizzaSizeInput) + ', with a ' + crustConvert(crustTypeInput) + ' crust. The total cost is Ksh.' + pizzaCost);
       };
 
       var crustConvert = function() {
@@ -74,6 +79,19 @@ $(document).ready(function() {
         };
       };
 
+      var pizzaConvert = function() {
+        if(pizzaSizeInput === 'Small (Ksh.500)'){
+          return 500;
+        } else if(pizzaSizeInput === 'Medium (Ksh.800)'){
+          return 800;
+        } else if(pizzaSizeInput === 'Large (Ksh.1200)'){
+          return 1200;
+        } else{
+          alert('Re-select a valid pizza size.');
+        }
+      }
+
+      var pizzaCost = numberOfPizzasInput * (pizzaConvert(pizzaSizeInput) + crustConvert(crustTypeInput));
       firstCustomer.firstCustomerPrint();
   });
 });
