@@ -60,7 +60,7 @@
               </div>
               <select name="pizza-size" class="custom-select mb-2" id='selectSize'>
                 <option selected>Select Pizza Size</option>
-                <option value="small" id='pizzaSmall'>Small (Ksh.500)</option>
+                <option value="small">Small (Ksh.500)</option>
                 <option value="medium">Medium (Ksh.800)</option>
                 <option value="large">Large (Ksh.1200)</option>
               </select>
@@ -69,7 +69,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Crust : </span>
               </div>
-              <select name="pizza-size" class="custom-select mb-2">
+              <select name="pizza-size" class="custom-select mb-2" id='selectCrustType'>
                 <option selected>Select Crust (Default: Regular)</option>
                 <option value="crispy">crispy (Free)</option>
                 <option value="gluten-free">Gluten-free (Free)</option>
@@ -77,7 +77,7 @@
               </select>
             </div>
 
-            <div class="container toppings-section">
+            <div class="container toppings-section" id='selectToppings'>
               <a href="" class="btn btn-light toppings-selected" data-toggle="collapse" id='top'>Click Here to add Toppings</a>
               <div id="toppingsSmall" class="collapse">
                 <div class="form-check">

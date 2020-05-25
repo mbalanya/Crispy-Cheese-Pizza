@@ -21,14 +21,12 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#selectSize').click(function() {
     var z = $('#selectSize option:selected').text();
+    //alert(z);
      if(z === 'Small (Ksh.500)'){
-       $('form a').removeProp();
        $('form a').prop('href', '#toppingsSmall');
      }else if(z === 'Medium (Ksh.800)'){
-       $('form a').removeProp();
        $('form a').prop('href', '#toppingsMedium');
      }else if(z === 'Large (Ksh.1200)'){
-       $('form a').removeProp();
        $('form a').prop('href', '#toppingsLarge');
      }else{
        $('form a').prop('href', '');
@@ -47,16 +45,35 @@ function TotalCost(numberOfPizzas, pizzaSize, crustType, numberOfToppings){
 var firstCustomer = new TotalCost(2, 'small', 'crunchy', 2);
 
 TotalCost.prototype.firstCustomerPrint = function(){
-  alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + this.crustType + ' crust and ' + this.numberOfToppings + ' toppings');
+  //alert('Hi! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + this.pizzaSize + ', with a ' + this.crustType + ' crust and ' + this.numberOfToppings + ' toppings');
 }
 
 firstCustomer.firstCustomerPrint();
 
 $(document).ready(function() {
-  $('form').submit(function(
-    var numberOfPizzasInput = $('#selectPizzaNumbers option:selected').text();
-    var pizzaSizeInput = $('#selectSize option:selected').text();
-    var crustTypeInput = $('#selectCrustType option:selected').text();
-    var number
-  ));
+  var w = $('form').submit(function(e) {
+            var numberOfPizzasInput = $('#selectPizzaNumbers option:selected').text();
+            var pizzaSizeInput = $('#selectSize option:selected').text();
+            var crustTypeInput = $('#selectCrustType option:selected').text();
+          //  var numberOfToppingsInput =
+
+            e.preventDefault();
+
+
+  });
 });
+
+
+alert(numberOfPizzasInput + pizzaSizeInput + crustTypeInput);
+/*
+var selected = new Array();
+
+           //Reference the CheckBoxes and insert the checked CheckBox value in Array.
+           $("#selectToppings input[type=checkbox]:checked").each(function () {
+               selected.push(this.value);
+           });
+
+           //Display the selected CheckBox values.
+           if (selected.length > 0) {
+               alert("Selected values: " + selected.join(","));
+           };*/
