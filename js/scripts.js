@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 //links pizza size to relevant toppings
 $(document).ready(function() {
-  $('#selectSize').click(function() {
+  $('#selectSize').click(function(e) {
     var z = $('#selectSize option:selected').text();
     //alert(z);
      if(z === 'Small (Ksh.500)'){
@@ -32,6 +32,7 @@ $(document).ready(function() {
        $('form a').prop('href', '');
        alert('Re-select a valid pizza size')
      }
+     e.preventDefault();
   });
 });
 
@@ -70,7 +71,7 @@ $(document).ready(function() {
       var firstCustomer = new TotalCost(numberOfPizzasInput, pizzaSizeInput, crustTypeInput);
 
       TotalCost.prototype.firstCustomerPrint = function(){
-        alert('Hi' + fnameInput + '! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + pizzaSizeInput + ', with a ' + crustTypeInput + ' crust. Delivery cost is Ksh.' + deliver() + ' The total cost is Ksh.' + pizzaCost);
+        alert('Hi ' + fnameInput + '! You have ordered ' + this.numberOfPizzas + ' pizzas. ' + 'Each pizza is ' + pizzaSizeInput + ', with a ' + crustTypeInput + ' crust. Delivery cost is Ksh.' + deliver() + '. ' + deliverNote() + ' The total cost is Ksh.' + pizzaCost);
       };
 
       var crustConvert = function() {
@@ -101,6 +102,13 @@ $(document).ready(function() {
           return 200;
         }else{
           return 0;
+        }
+      };
+      var deliverNote= function() {
+        if(fnameInput && lnameInput && addressInput != ''){
+          return 'Your pizza will be delivered to' + addressInput + ', ' + cityInput + '.';
+        }else{
+          return 'Your pizza will NOT be delivered.';
         }
       };
 
